@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+<script>
+  function makeTag (fatherDom, tagDetail) {
+    let tag = document.createElement(tagDetail.tagName)
+    tag.innerHTML = tagObj.tagValue
+    tag.classList.add(...tagDetail.tagClass)
+    fatherDom.appendChild(tag)
+  }
+
+  const tagObj = {
+    tagName: 'div',
+    tagValue: '老铁没毛病',
+    tagId: 'id',
+    tagClass: ['class', 'class1']
+  }
+  const fatherDom = document.body
+  makeTag(fatherDom, tagObj)
+
+</script>
+</body>
+</html>

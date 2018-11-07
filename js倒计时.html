@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+</head>
+<body>
+<script>
+let count = 100
+let timer = ''
+function makeTimer () {
+  timer = setTimeout(function () {
+    makeTimer()
+    console.log(count--)
+    if (count === 95) {
+      clearTimeout(timer)
+    }
+  }, 1000)
+}
+makeTimer()
+</script>
+</body>
+</html>

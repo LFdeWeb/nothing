@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .container {
+    display: flex
+  }
+  .content{
+    height: 100px;
+    width: 100px;
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  .tab {
+    height: 50px;
+    width: 100px;
+    border: 1px solid red
+  }
+</style>
+<body>
+<div class="container">
+  <div class="tab tab1">value</div>
+  <div class="tab tab2">
+    value2</div>
+  <div class="tab tab3">
+    value3</div>
+</div>
+<div class="content value1">value1</div>
+<div class="content value2">value2</div>
+<div class="content value3">value3</div>
+<script>
+  let tabBtn= document.getElementsByClassName('tab')
+  let contents= document.getElementsByClassName('content')
+  const  btn = Array.from(tabBtn)
+  const  cons = Array.from(contents)
+  btn.forEach((i , index)=> i.onclick = function () {
+    cons.forEach(i => i.classList.remove('show'))
+    cons[index].classList.add('show')
+  })
+</script>
+</body>
+</html>
